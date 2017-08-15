@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Switch, browserHistory } from "react-ro
 import Home from './Home';
 import ListPage from './ListPage';
 import ItemDetailPage from './ItemDetailPage';
-import AppStyle from './sass/app.scss';
 
 ReactDOM.render(
     <Router history={browserHistory}>
