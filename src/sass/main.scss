@@ -1,62 +1,65 @@
+$color_1: #fff;
+$color_2: white;
+$background_color_1: #03a9f4;
+$background_color_2: #fff;
+
 body {
-  margin: 0px;
+	margin: 0px;
 }
 .text-center {
-  display: block;
-  text-align: center;
+	display: block;
+	text-align: center;
 }
 .list-page {
-  display: flex;
-  flex-wrap: wrap;
+	display: flex;
+	flex-wrap: wrap;
+	z-index: 2;
+	box-sizing: border-box;
+	padding: 20px;
+	height: 100vh;
+	background-color: $background_color_2;
+	transition: opacity 0.5s;
 }
 .list-item {
-  display: block;
-  box-sizing: border-box;
-  padding: 10px;
-  width: 100px;
-  height: 100px;
-  border-radius: 60px;
-  color: #fff;
-  text-align: center;
+	display: block;
+	box-sizing: border-box;
+	padding: 10px;
+	width: 100px;
+	height: 100px;
+	border-radius: 60px;
+	color: $color_1;
+	text-align: center;
 }
 .transition-wrapper {
-  position: relative;
-  z-index: 1;
-}
-.transition-wrapper .transition-item {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
+	position: relative;
+	z-index: 1;
+	.transition-item {
+		position: fixed;
+		top: 0;
+		right: 0;
+		left: 0;
+	}
 }
 .detail-page {
-  overflow: hidden;
-  box-sizing: border-box;
-  padding: 10px 10px;
-  height: 100vh;
-  background-color: #03a9f4;
-}
-.detail-page a {
-  color: white;
-}
-.detail-page h1 {
-  margin-top: 60px;
-  color: #fff;
+	overflow: hidden;
+	box-sizing: border-box;
+	padding: 10px 10px;
+	height: 100vh;
+	background-color: $background_color_1;
+	a {
+		color: $color_2;
+	}
+	h1 {
+		margin-top: 60px;
+		color: $color_1;
+	}
 }
 .detail-page.transition-appear {
-  transition: transform 0.5s cubic-bezier(0.7, 0, 0.25, 1), left 0.5s cubic-bezier(0.7, 0, 0.25, 1), width 0.5s cubic-bezier(0.7, 0, 0.25, 1), height 0.5s cubic-bezier(0.7, 0, 0.25, 1), border-radius 0.5s cubic-bezier(0.7, 0, 0.25, 1);
-}
-.list-page {
-  z-index: 2;
-  box-sizing: border-box;
-  padding: 20px;
-  height: 100vh;
-  background-color: #fff;
-  transition: opacity 0.5s;
+	transition: transform 0.5s cubic-bezier(0.7, 0, 0.25, 1), left 0.5s cubic-bezier(0.7, 0, 0.25, 1), width 0.5s cubic-bezier(0.7, 0, 0.25, 1), height 0.5s cubic-bezier(0.7, 0, 0.25, 1), border-radius 0.5s cubic-bezier(0.7, 0, 0.25, 1);
 }
 .list-page.transition-appear {
-  opacity: 0.01;
+	opacity: 0.01;
 }
 .list-page.transition-appear.transition-appear-active {
-  opacity: 1;
+	opacity: 1;
 }

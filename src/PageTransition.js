@@ -236,6 +236,8 @@ export default class PageTransition extends Component {
   }
 }
 
+//end PageTransition
+
 PageTransition.propTypes = {
   'data-transition-id': PropTypes.string,
   data: PropTypes.object,
