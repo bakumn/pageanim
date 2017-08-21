@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router';
+import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 import randomColor from 'randomcolor';
-import Item from './Item';
-import action from './action';
+import Item from './Item.jsx';
+import action from './action.js';
 
 export default class ListPage extends Component {
   constructor(props) {

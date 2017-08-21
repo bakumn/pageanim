@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router';
+import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 
-class ItemDetailPage extends Component {
+export default class ItemDetailPage extends Component {
+
   constructor(...args) {
     super(...args);
     this.state = {
@@ -12,7 +13,18 @@ class ItemDetailPage extends Component {
   }
 
   onTransitionWillStart(data) {
-    console.log(data);
+      console.log(clickedItemData);
+    if (!data.clickedItemData) {
+      // Default animate position if user goto this page directly
+
+      this.setState({
+        doTransform: true,
+        position: { top: 0, left: 0, height: 10, width: 10 },
+        color: 'gray',
+        borderRadius: 200,
+      });
+      return;
+    }
     this.setState({
       doTransform: true,
       position: data.clickedItemData.position,
@@ -63,7 +75,7 @@ class ItemDetailPage extends Component {
         className="transition-item detail-page"
       >
         <Link className="text-center" to="/">
-          Item {this.props.params.itemId}
+          Item {this.props.match.params.itemId}
         </Link>
         <h1>
           Detail page here
@@ -75,4 +87,3 @@ class ItemDetailPage extends Component {
     );
   }
 }
-export default ItemDetailPage;

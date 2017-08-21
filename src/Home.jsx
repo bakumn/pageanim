@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import PageTransition from 'react-router-page-transition';
-import action from './action';
+import ReactDom from 'react-dom';
+import PageTransition from './PageTransition';
+import action from './action.js';
 
-class Home extends Component {
+export default class Home extends Component {
   constructor(...args) {
     super(...args);
     this.state = {
@@ -26,6 +27,7 @@ class Home extends Component {
       <div>
         <PageTransition
           timeout={500}
+          animateOnInit
           data={{ clickedItemData: this.state.clickedItemData }}
         >
           {this.props.children}
@@ -34,5 +36,3 @@ class Home extends Component {
     );
   }
 }
-
-export default Home;
